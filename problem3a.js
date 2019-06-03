@@ -28,5 +28,12 @@ const myRecipes = [
       'cream'
     ]
   }
-  // ...
 ];
+
+const filterRecipes = (myRecipes, ingredients) => {
+  return myRecipes.filter(recipe =>
+    ingredients.every(providedIngredient =>
+      !!recipe.ingredients.find(ingredient => ingredient === providedIngredient)));
+};
+
+export default filterRecipes
